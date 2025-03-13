@@ -1,20 +1,20 @@
-import React, {lazy, Suspense} from 'react';
+import React, { lazy, Suspense } from 'react';
 import reactMixin from 'react-mixin';
 import autoBind from 'react-autobind';
-import {observer} from 'mobx-react';
+import { observer } from 'mobx-react';
 import Reflux from 'reflux';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import sessionStore from '../stores/session';
 import bem from 'js/bem';
-import {searches} from '../searches';
+import { searches } from '../searches';
 import mixins from '../mixins';
 import LibrarySidebar from 'js/components/library/librarySidebar';
 import HelpBubble from 'js/components/support/helpBubble';
-import {COMMON_QUERIES, MODAL_TYPES} from '../constants';
-import {ROUTES, PROJECTS_ROUTES} from 'js/router/routerConstants';
+import { COMMON_QUERIES, MODAL_TYPES } from '../constants';
+import { ROUTES, PROJECTS_ROUTES } from 'js/router/routerConstants';
 import SidebarFormsList from '../lists/sidebarForms';
 import envStore from 'js/envStore';
-import {router, routerIsActive, withRouter} from '../router/legacy';
+import { router, routerIsActive, withRouter } from '../router/legacy';
 import Button from 'js/components/common/button';
 import pageState from 'js/pageState.store';
 
@@ -57,7 +57,7 @@ const FormSidebar = observer(
       );
     }
     componentWillUnmount() {
-      this.unlisteners.forEach((clb) => {clb();});
+      this.unlisteners.forEach((clb) => { clb(); });
     }
     newFormModal(evt) {
       evt.preventDefault();
@@ -195,7 +195,7 @@ const Drawer = observer(
                 href={envStore.data.source_code_url}
                 className='k-drawer__link'
                 target='_blank'
-                data-tip={t('Source')}
+                data-tip={t('Source Code')}
               >
                 <i className='k-icon k-icon-logo-github' />
               </a>
